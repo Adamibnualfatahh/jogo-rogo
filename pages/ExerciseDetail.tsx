@@ -113,15 +113,34 @@ const ExerciseDetail: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Posisi Utama</p>
-                <div className="aspect-square bg-black rounded-xl overflow-hidden border border-white/10">
-                  <img src={selectedMuscle.imageUrlMain} alt={selectedMuscle.name} className="w-full h-full object-contain" />
+                <div className="aspect-square bg-white/5 rounded-xl overflow-hidden border border-white/10 relative p-4">
+                  {/* Background Body Layer */}
+                  <img
+                    src={selectedMuscle.isFront
+                      ? "https://wger.de/static/images/muscles/muscular_system_front.svg"
+                      : "https://wger.de/static/images/muscles/muscular_system_back.svg"
+                    }
+                    className="absolute inset-0 w-full h-full object-contain opacity-20"
+                    alt="Body Outline"
+                  />
+                  {/* Muscle Highlight Layer */}
+                  <img src={selectedMuscle.imageUrlMain} alt={selectedMuscle.name} className="relative z-10 w-full h-full object-contain" />
                 </div>
               </div>
               {selectedMuscle.imageUrlSecondary && (
                 <div className="space-y-2">
                   <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Posisi Sekunder</p>
-                  <div className="aspect-square bg-black rounded-xl overflow-hidden border border-white/10">
-                    <img src={selectedMuscle.imageUrlSecondary} alt={selectedMuscle.name} className="w-full h-full object-contain" />
+                  <div className="aspect-square bg-white/5 rounded-xl overflow-hidden border border-white/10 relative p-4">
+                    {/* Background Body Layer - Usually secondary is same orientation or zoomed */}
+                    <img
+                      src={selectedMuscle.isFront
+                        ? "https://wger.de/static/images/muscles/muscular_system_front.svg"
+                        : "https://wger.de/static/images/muscles/muscular_system_back.svg"
+                      }
+                      className="absolute inset-0 w-full h-full object-contain opacity-20"
+                      alt="Body Outline"
+                    />
+                    <img src={selectedMuscle.imageUrlSecondary} alt={selectedMuscle.name} className="relative z-10 w-full h-full object-contain" />
                   </div>
                 </div>
               )}
