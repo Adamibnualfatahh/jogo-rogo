@@ -1,0 +1,7 @@
+{
+  "name": "JogoRogo - Aplikasi Latihan Fitness Indonesia",
+  "description": "Platform fitness modern untuk panduan latihan gym dan rumah yang terstruktur bagi orang Indonesia.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
