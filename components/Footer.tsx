@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <p className="text-gray-500 text-xs">© 2024 JogoRogo. Free Video-Based Platform.</p>
+        <p className="text-gray-500 text-xs">© {new Date().getFullYear()} JogoRogo. Free Video-Based Platform.</p>
         <p className="text-gray-500 text-xs italic">Created by Adam Ibnu Alfatah using Wger API.</p>
       </div>
     </footer>

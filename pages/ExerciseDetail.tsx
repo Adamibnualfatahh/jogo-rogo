@@ -97,18 +97,20 @@ const ExerciseDetail: React.FC = () => {
       {/* Modal for Muscle Details */}
       {selectedMuscle && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedMuscle(null)}>
-          <div className="bg-gym-surface border border-white/10 rounded-3xl p-6 max-w-2xl w-full shadow-2xl transform scale-100 transition-all" onClick={e => e.stopPropagation()}>
-            <div className="flex justify-between items-start mb-6">
+          <div className="bg-gym-surface border border-white/10 rounded-3xl p-6 max-w-2xl w-full shadow-2xl transform scale-100 transition-all max-h-[85vh] overflow-y-auto relative" onClick={e => e.stopPropagation()}>
+            <div className="sticky top-0 right-0 flex justify-end mb-2 -mt-2 z-10">
+              <button
+                onClick={() => setSelectedMuscle(null)}
+                className="p-2 bg-gym-surface hover:bg-white/10 rounded-full transition-colors border border-white/10 shadow-lg"
+              >
+                <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+            <div className="flex justify-between items-start mb-6 -mt-10">
               <div>
                 <h3 className="text-2xl font-black text-white">{selectedMuscle.name}</h3>
                 <p className="text-gray-400 text-sm">{selectedMuscle.nameEn}</p>
               </div>
-              <button
-                onClick={() => setSelectedMuscle(null)}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors"
-              >
-                <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-              </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
