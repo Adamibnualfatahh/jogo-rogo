@@ -37,7 +37,7 @@ const MuscleGuide: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <div className="relative group sticky top-24">
+        <div className="relative group md:sticky md:top-24">
           <div className="absolute inset-0 bg-gym-accent/5 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-transform duration-700"></div>
           <img
             src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
